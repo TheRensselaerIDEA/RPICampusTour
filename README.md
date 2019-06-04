@@ -10,6 +10,7 @@ Each panoramic video needs its own (simple...) html file which presents the vide
 
 For the prototype we host these on TWC's "orion" server; we've also archived these in the `wall_html` subdirectory...
 
+```
 http://orion.tw.rpi.edu/~olyerickson/Campfire_Suite.html
 http://orion.tw.rpi.edu/~olyerickson/CII_Lobby.html
 http://orion.tw.rpi.edu/~olyerickson/idea_logo_wall.html
@@ -22,11 +23,11 @@ http://orion.tw.rpi.edu/~olyerickson/EMPAC_Lobby.html
 http://orion.tw.rpi.edu/~olyerickson/EMPAC_Hall.html
 http://orion.tw.rpi.edu/~olyerickson/EMPAC_Studio.html
 http://orion.tw.rpi.edu/~olyerickson/EMPAC_Theater.html
-
+```
 ## Locations of Wall panoramic videos:
 
 For the prototype we host these on TWC's "orion" server:
-
+```
 http://orion.tw.rpi.edu/~olyerickson/Campfire_Suite.mp4
 http://orion.tw.rpi.edu/~olyerickson/CII_Lobby.mp4
 http://orion.tw.rpi.edu/~olyerickson/idea_logo_wall.mp4
@@ -39,4 +40,4 @@ http://orion.tw.rpi.edu/~olyerickson/EMPAC_Lobby.mp4
 http://orion.tw.rpi.edu/~olyerickson/EMPAC_Hall.mp4
 http://orion.tw.rpi.edu/~olyerickson/EMPAC_Studio.mp4
 http://orion.tw.rpi.edu/~olyerickson/EMPAC_Theater.mp4
-
+```
