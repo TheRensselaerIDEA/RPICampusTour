@@ -56,11 +56,13 @@ campfireApp(
     
     output$frame <- renderUI({
       if(!is.null(serverValues$url)) {
-        redirectScript <- paste0("window = window.open('", serverValues$url, "');")
-        tags$script(HTML(redirectScript))
+        includeHTML(serverValues$url)
+#        redirectScript <- paste0("window = window.open('", serverValues$url, "');")
+#        tags$script(HTML(redirectScript))
       } else {
-        redirectScript <- paste0("window = window.open('", "http://orion.tw.rpi.edu/~olyerickson/rpi_logo_wall.html", "');")
-        tags$script(HTML(redirectScript))
+        includeHTML("http://orion.tw.rpi.edu/~olyerickson/rpi_logo_wall_2.html")
+#        redirectScript <- paste0("window = window.open('", "http://orion.tw.rpi.edu/~olyerickson/rpi_logo_wall.html", "');")
+#        tags$script(HTML(redirectScript))
       }
     })
 
