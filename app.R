@@ -58,7 +58,7 @@ campfireApp(
     output$frame <- renderUI({
       if(!is.null(serverValues$url)) {
         
-        tags$iframe(src=serverValues$url, width="100%", height="100%")
+        tags$iframe(src=serverValues$url, width="6400px", height="800px")
         
         # Method a)
         # includeHTML(serverValues$url)
@@ -69,7 +69,7 @@ campfireApp(
         
       } else {
         
-        tags$iframe(src="http://orion.tw.rpi.edu/~olyerickson/rpi_logo_wall.html",width="100%", height="100%")
+        tags$iframe(src="https://orion.tw.rpi.edu/~olyerickson/rpi_logo_wall.html",width="6400px", height="800px")
         
         # includeHTML("https://orion.tw.rpi.edu/~olyerickson/tree_pano.html?lat=42.730669&long=-73.676192")
         
@@ -88,7 +88,7 @@ campfireApp(
     output$frame_left <- renderUI({
       if(!is.null(serverValues$text)) {
         
-        tags$iframe(src=serverValues$text)
+        tags$iframe(src=serverValues$text, width="1920px", height="1080px")
         
         # redirectScript <- paste0("window = window.open('", serverValues$text, "');")
         # tags$script(HTML(redirectScript))
@@ -96,7 +96,7 @@ campfireApp(
         # redirectScript <- paste0("window = window.open('", "http://rpi.edu", "');")
         # tags$script(HTML(redirectScript))
         
-        tags$iframe(src="https://orion.tw.rpi.edu/~olyerickson/tree_pano.html?lat=42.730669&long=-73.676192", width="1920px", height="1080px")
+        tags$iframe(src="https://www.rpi.edu", width="1920px", height="1080px")
       }
     })
     
