@@ -54,15 +54,27 @@ campfireApp(
       )    
     })
     
+    # Wall
     output$frame <- renderUI({
       if(!is.null(serverValues$url)) {
-        includeHTML(serverValues$url)
-#        redirectScript <- paste0("window = window.open('", serverValues$url, "');")
-#        tags$script(HTML(redirectScript))
+        
+        tags$iframe(src=serverValues$url, width="6400px", height="800px")
+        
+        # Method a)
+        # includeHTML(serverValues$url)
+        
+        # Method b)
+        # redirectScript <- paste0("window = window.open('", serverValues$url, "');")
+        # tags$script(HTML(redirectScript))
+        
       } else {
-        includeHTML("http://orion.tw.rpi.edu/~olyerickson/rpi_logo_wall_2.html")
-#        redirectScript <- paste0("window = window.open('", "http://orion.tw.rpi.edu/~olyerickson/rpi_logo_wall.html", "');")
-#        tags$script(HTML(redirectScript))
+        
+        tags$iframe(src="https://orion.tw.rpi.edu/~olyerickson/rpi_logo_wall.html",width="6400px", height="800px")
+        
+        # includeHTML("https://orion.tw.rpi.edu/~olyerickson/tree_pano.html?lat=42.730669&long=-73.676192")
+        
+        # redirectScript <- paste0("window = window.open('", "http://orion.tw.rpi.edu/~olyerickson/rpi_logo_wall.html", "');")
+        # tags$script(HTML(redirectScript))
       }
     })
 
@@ -72,13 +84,19 @@ campfireApp(
       )    
     })
     
+    # Left Monitor
     output$frame_left <- renderUI({
       if(!is.null(serverValues$text)) {
-        redirectScript <- paste0("window = window.open('", serverValues$text, "');")
-        tags$script(HTML(redirectScript))
+        
+        tags$iframe(src=serverValues$text, width="1920px", height="1080px")
+        
+        # redirectScript <- paste0("window = window.open('", serverValues$text, "');")
+        # tags$script(HTML(redirectScript))
       } else {
-        redirectScript <- paste0("window = window.open('", "http://rpi.edu", "');")
-        tags$script(HTML(redirectScript))
+        # redirectScript <- paste0("window = window.open('", "http://rpi.edu", "');")
+        # tags$script(HTML(redirectScript))
+        
+        tags$iframe(src="https://www.rpi.edu", width="1920px", height="1080px")
       }
     })
     
