@@ -60,7 +60,7 @@ campfireApp(
 #        redirectScript <- paste0("window = window.open('", serverValues$url, "');")
 #        tags$script(HTML(redirectScript))
       } else {
-        includeHTML("http://orion.tw.rpi.edu/~olyerickson/rpi_logo_wall_2.html")
+        includeHTML("https://www.google.com/maps/@42.7402523,-73.6976922,15z")
 #        redirectScript <- paste0("window = window.open('", "http://orion.tw.rpi.edu/~olyerickson/rpi_logo_wall.html", "');")
 #        tags$script(HTML(redirectScript))
       }
