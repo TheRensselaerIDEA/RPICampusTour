@@ -1,9 +1,16 @@
 # This is the main app.R
+# Some of these may need to be installed from source. Your mileage may vary...
+library(curl)
+library(httr)
+
+Sys.setenv(CURL_CA_BUNDLE="/utils/microsoft-r-open-3.4.3/lib64/R/lib/microsoft-r-cacert.pem")
+
 library(shiny)
 library(leaflet)
+library(viridisLite)
 library(tidyverse)
 library(ggplot2)
-#library(useful)
+library(shinyWidgets)
 
 # Read in the tour location data
 # TODO: Make this a Google spreadsheet...
@@ -37,15 +44,22 @@ campfireApp(
             maxBounds = list(list(17, -180), list(59, 180)))))
       )),
 
+  # Updated to nicely color circle markers based on factors from the source data
   serverFunct = function(serverValues, output, session) {
     
     map = createLeafletMap(session, 'map')
     session$onFlushed(once=T, function(){
-      
-    map$addCircleMarker(lat = tour_locations$latitude, 
+    
+      # Make a palette based on the desired colors and the range of factor values
+      # viridis is optimal for color-blind people
+      pal <- colorFactor(palette = viridis(length(unique(tour_locations$group)), option="plasma"), 
+                         domain = unique(tour_locations$group))
+
+      map$addCircleMarker(lat = tour_locations$latitude, 
                         lng = tour_locations$longitude, 
                         radius = tour_locations$radius, 
-                        layerId = tour_locations$ids)
+                        layerId = tour_locations$ids, 
+                        options(color=pal(tour_locations$group)))
     })        
     
     output$wall_ui <- renderUI({
